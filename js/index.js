@@ -177,8 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div id="cart-items"></div>
             <div class="buttons">
-                <a class="button" href="./pages/cart.html">View Cart</a>
-                <a class="button" href="./pages/checkout.html">Checkout</a>
+                <a class="button" href="pages/cart.html">View Cart</a>
+                <a class="button" href="pages/checkout.html">Checkout</a>
             </div>
         </div>
     `;
