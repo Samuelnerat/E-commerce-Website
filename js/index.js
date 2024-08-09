@@ -4,7 +4,7 @@ const exploreButtons = document.querySelectorAll('.explore-button');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const mobileNav = document.querySelector('.mobile-nav');
 const closeMenu = document.querySelector('.close-menu');
-const images = ['../images/hero3.jpg', '../images/hero1.jpg'];
+const images = ['./images/hero3.jpg', './images/hero1.jpg'];
 let currentIndex = 0;
 let newList = [];
 let categoryList = [];
@@ -65,7 +65,7 @@ function viewProduct () {
         event.addEventListener("click", () => {
             const productId = newList[index].id;
             localStorage.setItem("productId", productId);
-            window.location.href = '../pages/product.html';
+            window.location.href = './pages/product.html';
         });
     });
 }
@@ -88,7 +88,7 @@ function addToCategory () {
     categoryList.forEach((everyCategory, index) => {
         displayCategory += `
                 <div class="category--picture"></div>
-                <a href="../pages/shop.html"><div class="category--name">${everyCategory}</div></a>
+                <a href="./pages/shop.html"><div class="category--name">${everyCategory}</div></a>
         `
     })
 
@@ -99,7 +99,7 @@ getCategories()
 document.addEventListener('DOMContentLoaded', function() {
     exploreButtons.forEach(function(button) {
         button.addEventListener('click', function() {
-            window.location.href = '../pages/shop.html';
+            window.location.href = './pages/shop.html';
         });
     });
 });
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const exploreButton = document.getElementById('contact-button');
     exploreButton.addEventListener('click', function() {
-        window.location.href = '../pages/contact.html';
+        window.location.href = './pages/contact.html';
     });
 });
 
