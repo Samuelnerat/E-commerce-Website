@@ -74,6 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
     renderCartItems();
 });
 
+const exploreButton = document.getElementById('contact-button');
+exploreButton.addEventListener('click', function() {
+    window.location.href = '../pages/contact.html';
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const searchIcon = document.querySelector('.fa-magnifying-glass');
     const searchOverlay = document.getElementById('search-overlay');

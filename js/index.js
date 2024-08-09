@@ -177,8 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div id="cart-items"></div>
             <div class="buttons">
-                <a class="button" href="../pages/cart.html">View Cart</a>
-                <a class="button" href="../pages/checkout.html">Checkout</a>
+                <a class="button" href="./pages/cart.html">View Cart</a>
+                <a class="button" href="./pages/checkout.html">Checkout</a>
             </div>
         </div>
     `;
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         cart.forEach(item => {
             cartItemsHTML += `
-            <a href="../pages/cart.html" class="cart-item-link">
+            <a href="./pages/cart.html" class="cart-item-link">
                 <div class="cart-item">
                     <img src="${item.image}" alt="${item.title}" style="width: 50px;">
                     <p>${item.title}</p>
