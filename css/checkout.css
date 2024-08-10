@@ -250,5 +250,8 @@ form input {
     #cart-totals p {
         padding-bottom: 10px;
     }
+    .overlay-content {
+        max-width: 300px;
+    }
 }
 
