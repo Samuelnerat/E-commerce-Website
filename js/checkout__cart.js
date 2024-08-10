@@ -106,3 +106,108 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const placeOrderButton = document.querySelector('.btn1');
+    const paymentIcons = document.querySelectorAll('.payment-icons i');
+    let selectedPaymentMethod = null;
+
+    paymentIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            paymentIcons.forEach(icon => icon.classList.remove('selected'));
+            this.classList.add('selected');
+            selectedPaymentMethod = this.getAttribute('data-value');
+        });
+    });
+
+    placeOrderButton.addEventListener('click', function() {
+        const billingForm = document.getElementById('billing-form');
+        const shippingForm = document.getElementById('shipping-form');
+
+        let errorMessages = [];
+
+        if (!billingForm.checkValidity()) {
+            errorMessages.push('Please fill out all required billing fields.');
+        }
+
+        if (!shippingForm.checkValidity()) {
+            errorMessages.push('Please fill out all required shipping fields.');
+        }
+
+        if (!selectedPaymentMethod) {
+            errorMessages.push('Please select a payment method.');
+        }
+
+        if (errorMessages.length > 0) {
+            showFailureOverlay(errorMessages.join(' '));
+            return;
+        }
+
+        const orderDetails = {
+            items: JSON.parse(localStorage.getItem('cart')) || [],
+            total: parseFloat(document.getElementById('cart-total').textContent)
+        };
+
+        setTimeout(() => {
+            // Simulate success or failure randomly for demonstration
+            // const success = Math.random() > 0.2;
+
+            // if (success) {
+            //     showSuccessOverlay();
+            //     localStorage.removeItem('cart');
+            // } else {
+            //     showFailureOverlay('Failed to place your order. Please try again.');
+            // }
+            showSuccessOverlay();
+            localStorage.removeItem('cart');
+        }, 3000);
+    });
+
+    function showSuccessOverlay() {
+        const overlay = document.createElement('div');
+        overlay.className = 'overlay success-overlay';
+        overlay.innerHTML = `
+            <div class="overlay-content">
+                 <button id="close-success-overlay" class="close-button">&times;</button>
+                <h2>Order Placed Successfully!</h2>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        document.getElementById('close-success-overlay').addEventListener('click', function() {
+            document.body.removeChild(overlay);
+            window.location.href = '../pages/shop.html';
+        });
+
+        overlay.addEventListener('click', function(event) {
+            if (event.target === overlay) {
+                document.body.removeChild(overlay);
+                localStorage.removeItem('cart');
+                window.location.href = '../pages/shop.html';
+            }
+        });
+    }
+
+    function showFailureOverlay(message) {
+        const overlay = document.createElement('div');
+        overlay.className = 'overlay failure-overlay';
+        overlay.innerHTML = `
+            <div class="overlay-content">
+                <button id="close-failure-overlay" class="close-button">&times;</button>
+                <h2>${message}</h2>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        document.getElementById('close-failure-overlay').addEventListener('click', function() {
+            document.body.removeChild(overlay);
+        });
+
+        overlay.addEventListener('click', function(event) {
+            if (event.target === overlay) {
+                document.body.removeChild(overlay);
+            }
+        });
+    }
+});

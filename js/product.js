@@ -30,8 +30,8 @@ function retrieveProduct() {
                     <div class="product-details">
                         <h1 id="product-title">${data.title}</h1>
                         <p id="product-description">${data.description}</p>
-                        <p id="product-price">$${data.price}</p>
-                        <p id="product-category">${data.category}</p>
+                        <p class="product-price" id="product-price">$${data.price}</p>
+                        <p class="product-category" id="product-category">${data.category}</p>
                         <button id="add-to-cart" class="btn">Add to Cart</button>
                     </div>
                 </div>

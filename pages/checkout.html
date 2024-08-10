@@ -77,32 +77,32 @@
 
             <div id="checkout--form">
                 <h2>Billing Information</h2>
-                <form>
+                <form  id="billing-form">
                     <div>
-                        <input placeholder="Full Name">
-                        <input placeholder="Address">
+                        <input placeholder="Full Name" type="text" required>
+                        <input placeholder="Address" type="text" required>
                     </div>
-                    <input placeholder="Phone Number">
+                    <input placeholder="Phone Number" type="text" required>
                 </form>
 
                 <h2>Shipping Information</h2>
-                <form>
-                    <input placeholder="Country">
+                <form id="shipping-form">
+                    <input placeholder="Country" type="text" required>
                     <div>
-                        <input placeholder="State">
-                        <input placeholder="Zip Code">
+                        <input placeholder="State" type="text" required>
+                        <input placeholder="Zip Code" type="text" required>
                     </div>
                 </form>
 
                 <h2>Payment Information</h2>
                 <div class="payment-icons">
-                    <i class="fa-brands fa-cc-mastercard"></i>
-                    <i class="fa-brands fa-paypal"></i>
-                    <i class="fa-brands fa-cc-visa"></i>
-                    <i class="fa-brands fa-google-pay"></i>
+                    <i class="fa-brands fa-cc-mastercard" data-value="mastercard"></i>
+                    <i class="fa-brands fa-paypal" data-value="paypal"></i>
+                    <i class="fa-brands fa-cc-visa" data-value="visa"></i>
+                    <i class="fa-brands fa-google-pay" data-value="google-pay"></i>
                 </div>
 
-                <button class="btn">Place Your Order</button>
+                <button class="btn btn1">Place Your Order</button>
             </div>
   
         </div>
@@ -130,6 +130,7 @@
             </div>
         </div>
     </footer>
+    <!-- <div class="overlay" id="overlay"></div> -->
     <div id="search-overlay" class="search-overlay">
         <div class="search-overlay-content">
             <button id="close-search-overlay" class="close-button">&times;</button>

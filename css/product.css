@@ -44,16 +44,12 @@
 .product-details p {
     margin: 10px 0;
 }
-.product-gallery {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
+.product-price {
+    color: var(--darkCyan);
 }
-.product-gallery img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    margin-bottom: 10px;
+.product-category {
+    color: var(--dark-grey);
+    text-transform: uppercase;
 }
 @media (max-width: 768px) {
     .product-content {

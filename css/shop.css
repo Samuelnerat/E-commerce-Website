@@ -79,12 +79,15 @@ h1{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     width: 50%;
+    margin-top: 10px;
+    border-radius: 10px;
 }
 .category-dropdown a {
     color: var(--dark-grey);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    text-transform: capitalize;
 }
 .category-dropdown a:hover {
     background-color: #f1f1f1;

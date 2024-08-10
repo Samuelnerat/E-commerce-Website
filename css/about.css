@@ -108,7 +108,9 @@ main h1 {
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
+    min-height: 500px;
     height: 500px;
+    /* height: 100%; */
     margin-top: 50px;
     margin-bottom: 90px;
 }
@@ -133,6 +135,7 @@ main h1 {
 @media (max-width: 760px) {
     .started--class{
         flex-direction: column;
+        height: auto;
     }
     .started--text{
         padding: 5px;
